@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Art Portfolio</title>
+   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #1B3447;
+      text-align: center;
+      color: #C0E4D0;
+    }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .button-group button {
+      background: #23717b;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .button-group button:hover {
+      background: #1f2b2d;
+    }
+
+    .section {
+      display: none;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    #home { display: block; }
+
+    .art-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .art-grid img {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .art-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      max-width: 80%;
+      max-height: 80%;
+    }
+
+    .modal-content img {
+      width: 70%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+    }#contact a {
+  text-decoration: none;
+  color: #C0E4D0; /* Soft pink shade matching your theme */
+  font-weight: bold;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+  color: #00bcaf; /* Slightly darker on hover */
+}.slideshow-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.slideshow-bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  filter: brightness(0.3); /* Makes it dark and subtle */
+}
+    h2 {
+      font-family: 'Dancing Script', cursive;
+    }
+
+  </style>
+</head>
+<body>
+<div class="slideshow-bg">
+  <img src="images/beldam1.jpg" class="slide" style="opacity: 1;">
+  <img src="images/dimple.jpg" class="slide">
+  <img src="images/guts1.jpg" class="slide">
+  <img src="images/luffy gear 5.jpg" class="slide">
+  <img src="images/the thing.jpg" class="slide">
+</div>
+
+<div class="button-group">
+  <button onclick="showSection('home')">Home</button>
+  <button onclick="showSection('artworks')">Artworks</button>
+  <button onclick="showSection('prices')">Prices</button>
+  <button onclick="showSection('contact')">Contact</button>
+  <button onclick="showSection('terms')">Terms and Condition</button>
+  <button onclick="showSection('about')">About Me</button>
+</div>
+
+<div id="home" class="section">
+  <h2>Welcome to My Portfolio</h2>
+</div>
+
+<div id="artworks" class="section">
+  <h2>My Artworks</h2>
+  <div class="art-grid">
+    <img src="images/beldam1.jpg" alt="Art 1" onclick="openModal(this.src)">
+    <img src="images/blindlady2.jpg" alt="Art 2" onclick="openModal(this.src)">
+    <img src="images/briar1.jpg" alt="Art 3" onclick="openModal(this.src)">
+    <img src="images/cyborg spider woman1.jpg" alt="Art 4" onclick="openModal(this.src)">
+    <img src="images/dimple.jpg" alt="Art 5" onclick="openModal(this.src)">
+    <img src="images/giant.jpg" alt="Art 6" onclick="openModal(this.src)">
+    <img src="images/the thing.jpg" alt="Art 7" onclick="openModal(this.src)">
+    <img src="images/guts1.jpg" alt="Art 8" onclick="openModal(this.src)">
+    <img src="images/luffy gear 5.jpg" alt="Art 9" onclick="openModal(this.src)">
+    <img src="images/harleyquinn (1).jpg" alt="Art 10" onclick="openModal(this.src)">
+  </div>
+</div>
+
+<div id="prices" class="section">
+  <h2>Prices</h2>
+
+  <table style="margin: 20px auto; border-collapse: collapse; color: #C0E4D0; width: 80%;">
+    <thead>
+      <tr>
+        <th style="padding: 10px; border: 1px solid #1f2b2d;">Shot</th>
+        <th style="padding: 10px; border: 1px solid #1f2b2d;">Base Price</th>
+        <th style="padding: 10px; border: 1px solid #1f2b2d;">Estimated Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #1f2b2d;">Portrait (Head to Bust)</td>
+        <td style="padding: 10px; border: 1px solid #1f2b2d;">$15</td>
+        <td style="padding: 10px; border: 1px solid #1f2b2d;">2–3 days after sketch approval</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #1f2b2d;">Halfbody (Head to Waist)</td>
+        <td style="padding: 10px; border: 1px solid #1f2b2d;">$50</td>
+        <td style="padding: 10px; border: 1px solid #1f2b2d;">3–4 days after sketch approval</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #1f2b2d;">Full Body</td>
+        <td style="padding: 10px; border: 1px solid #1f2b2d;">$80</td>
+        <td style="padding: 10px; border: 1px solid #1f2b2d;">4–6 days after sketch approval</td>
+      </tr>
+    </tbody>
+  </table>
+
+   <h2>Additional Fees</h2>
+  <table style="margin: 10px auto; border-collapse: collapse; color: #C0E4D0; width: 70%;">
+    <thead>
+      <tr>
+        <th style="padding: 10px; border: 1px solid #1f2b2d;">Add-on</th>
+        <th style="padding: 10px; border: 1px solid #1f2b2d;">Fee</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #1f2b2d;">Complex Background</td>
+        <td style="padding: 10px; border: 1px solid #1f2b2d;">+ $30</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #1f2b2d;">Complex Clothing/Armor</td>
+        <td style="padding: 10px; border: 1px solid #1f2b2d;">+ $20</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #1f2b2d;">Title / Text</td>
+        <td style="padding: 10px; border: 1px solid #1f2b2d;">+ $5</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #1f2b2d;">Additional Revision</td>
+        <td style="padding: 10px; border: 1px solid #1f2b2d;">+ $10 / revision</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #1f2b2d;">Commercial Work License</td>
+        <td style="padding: 10px; border: 1px solid #1f2b2d;">+ 2x of total price</td>
+      </tr>
+    </tbody>
+  </table>
+  
+</div>
+
+
+<div id="contact" class="section">
+  <h2>Contact Me</h2>
+  <p>Email: caeddyeddsm@gmail.com</p>
+  <p>
+    <a href="https://www.instagram.com/ce3nobi" target="_blank">
+      <img src="icons/instagram.png" alt="Instagram" width="30" style="vertical-align: middle; "> @ce3nobi
+    </a>
+  </p>
+
+  <p>
+    <a href="https://www.facebook.com/ceemanaguit" target="_blank">
+      <img src="icons/facebook.png" alt="Facebook" width="30" style="vertical-align: middle;"> @ceemanaguit
+    </a>
+  </p>
+
+  <p>
+    <a href="https://twitter.com/ce3nobi" target="_blank">
+      <img src="icons/twitter.png" alt="Twitter" width="30" style="vertical-align: middle;"> @ce3nobi
+    </a>
+  </p>
+</div>
+
+<div id="terms" class="section">
+  <h2>Terms & Conditions</h2>
+
+  <h3 style="color: #C0E4D0;">Work and Payment</h3>
+  <p>
+    The project will begin once all the necessary information and reference materials are provided by the client. Work will proceed according to the agreed timeline and is expected to conclude by the scheduled deadline. As the artist, I will create a custom illustration or design based on the client's request. 
+    Payment will be divided into two parts: 50% after the sketch has been approved, and the remaining 50% upon completion of the final product. Please note that the prices listed are base rates and may vary depending on the complexity or details of the project.
+  </p>
+
+  <h3 style="color: #C0E4D0;">Ownership and License</h3>
+  <p>
+    The client holds full ownership of the final product. As the artist, I do not retain any rights to the commissioned work. The client has full authority over the use, distribution, and reproduction of the product. I will not sell, repost, or feature the commissioned work in any personal or public galleries unless explicit permission is granted by the client. The role of the artist is strictly to create the product based on the client's vision, with all rights and licenses belonging solely to the client.
+  </p>
+</div>
+
+
+<div id="about" class="section">
+  <h2>About Me</h2>
+  <p>I'm ce3nobi, I'm a digital artist, I draw portraits, full illustrations, OC, NSFW, doodle, comics, fanarts, etc. I create personalized artworks and love bringing ideas to life.</p>
+  <p>NO FURRIES</p>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal" onclick="closeModal()">
+  <span class="close">&times;</span>
+  <div class="modal-content">
+    <img id="modal-img" src="" alt="Artwork Preview">
+  </div>
+</div>
+
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+  }
+
+  function openModal(src) {
+    document.getElementById('modal-img').src = src;
+    document.getElementById('modal').style.display = 'flex';
+  }
+
+  function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+  }
+    const slides = document.querySelectorAll(".slideshow-bg .slide");
+  let current = 0;
+
+  setInterval(() => {
+    slides[current].style.opacity = 0;
+    current = (current + 1) % slides.length;
+    slides[current].style.opacity = 1;
+  }, 5000); // change every 5 seconds
+</script>
+
+</body>
+</html>
