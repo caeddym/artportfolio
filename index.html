@@ -152,56 +152,61 @@ table th, table td {
 }
 @media screen and (max-width: 768px) {
   body {
-    font-size: 17px;
-    padding: 10px;
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+  }
+
+  .button-group button {
+    width: 90%;
+    font-size: 20px;
+    padding: 16px;
   }
 
   .section {
     padding: 25px 15px;
   }
 
-  .button-group button {
-    width: 95%;
-    font-size: 18px;
-    padding: 14px 24px;
-  }
-
   h2 {
-    font-size: 2em;
+    font-size: 2.2em;
+    margin-bottom: 15px;
   }
 
   p {
-    font-size: 1.1em;
+    font-size: 1.15em;
     line-height: 1.6;
   }
 
   .art-grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+    gap: 12px;
+  }
+
+  .art-grid img {
+    border-radius: 10px;
   }
 
   table {
-    font-size: 0.95em;
+    font-size: 1em;
+    width: 100%;
   }
 
   table th,
   table td {
-    padding: 8px;
+    padding: 10px;
   }
 
-  #home h2,
-  #about h2,
-  #contact h2,
-  #terms h2 {
-    font-size: 2.2em;
-  }
-
-  #home p,
-  #about p,
-  #contact p,
-  #terms p {
-    font-size: 1.1em;
+  .modal-content img {
+    width: 95%;
   }
 }
+
 
 
 </style>
