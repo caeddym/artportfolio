@@ -158,19 +158,14 @@ table th, table td {
     padding: 15px;
   }
 
-  .button-group {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    margin: 20px 0;
-  }
+.button-group {
+  grid-template-columns: repeat(3, 1fr);
+}
 
-  .button-group button {
-    width: 90%;
-    font-size: 20px;
-    padding: 16px;
-  }
-
+.button-group button {
+  font-size: 20px;
+  padding: 16px;
+}
   .section {
     padding: 25px 15px;
   }
