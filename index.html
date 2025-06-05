@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>My Art Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 <style>
 * {
@@ -216,20 +217,23 @@ table th, table td {
   <img src="images/the thing.jpg" class="slide">
 </div>
 
-<div class="button-group">
-  <button onclick="showSection('home')">Home</button>
-  <button onclick="showSection('artworks')">Artworks</button>
-  <button onclick="showSection('prices')">Prices</button>
-  <button onclick="showSection('contact')">Contact</button>
-  <button onclick="showSection('terms')">Terms and Condition</button>
-  <button onclick="showSection('about')">About Me</button>
+<div class="container text-center my-3">
+  <div class="row row-cols-2 row-cols-sm-3 row-cols-md-6 g-2">
+    <div class="col"><button class="btn btn-info w-100" onclick="showSection('home')">Home</button></div>
+    <div class="col"><button class="btn btn-info w-100" onclick="showSection('artworks')">Artworks</button></div>
+    <div class="col"><button class="btn btn-info w-100" onclick="showSection('prices')">Prices</button></div>
+    <div class="col"><button class="btn btn-info w-100" onclick="showSection('contact')">Contact</button></div>
+    <div class="col"><button class="btn btn-info w-100" onclick="showSection('terms')">Terms and Condition</button></div>
+    <div class="col"><button class="btn btn-info w-100" onclick="showSection('about')">About Me</button></div>
+  </div>
 </div>
 
-<div id="home" class="section">
+
+<div id="home" class="section py-4">
   <h2>Welcome to My Portfolio</h2>
 </div>
 
-<div id="artworks" class="section">
+<div id="artworks" class="section py-4">
   <h2>My Artworks</h2>
   <div class="art-grid">
     <img src="images/beldam1.jpg" alt="Art 1" onclick="openModal(this.src)">
@@ -245,7 +249,7 @@ table th, table td {
   </div>
 </div>
 
-<div id="prices" class="section">
+<div id="prices" class="section py-4">
   <h2>Prices</h2>
 
   <table style="margin: 20px auto; border-collapse: collapse; color: #C0E4D0; width: 80%;">
@@ -310,7 +314,7 @@ table th, table td {
 </div>
 
 
-<div id="contact" class="section">
+<div id="contact" class="section py-4">
   <h2>Contact Me</h2>
   <p>Email: caeddyeddsm@gmail.com</p>
   <p>
@@ -332,7 +336,7 @@ table th, table td {
   </p>
 </div>
 
-<div id="terms" class="section">
+<div id="terms" class="section py-4">
   <h2>Terms & Conditions</h2>
 
   <h3 style="color: #C0E4D0;">Work and Payment</h3>
@@ -348,7 +352,7 @@ table th, table td {
 </div>
 
 
-<div id="about" class="section">
+<div id="about" class="section py-4">
   <h2>About Me</h2>
   <p>I'm ce3nobi, I'm a digital artist, I draw portraits, full illustrations, OC, NSFW, doodle, comics, fanarts, etc. I create personalized artworks and love bringing ideas to life.</p>
   <p>NO FURRIES</p>
